@@ -7,7 +7,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "remix build",
-    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "build:css": "tailwindcss -m -i ./styles/tailwind.css -o app/styles/tailwind.css",
     "deploy": "npm run build:css && npm run build && wrangler publish",
     "dev:remix": "remix watch",
     "dev:css": "tailwindcss -w -i ./styles/tailwind.css -o app/styles/tailwind.css",
