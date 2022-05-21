@@ -9,3 +9,5 @@ node_modules
 
 # Tailwind
 /app/styles/tailwind.css
+
+/coverage
