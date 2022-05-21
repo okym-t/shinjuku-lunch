@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './setup'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:8787')
+  await page.goto('/')
 })
 
 test('count up', async ({ page }) => {
