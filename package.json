@@ -7,7 +7,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "remix build",
-    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "build:css": "tailwindcss -m -i ./styles/tailwind.css -o app/styles/tailwind.css",
     "deploy": "npm run build:css && npm run build && wrangler publish",
     "dev:remix": "remix watch",
     "dev:css": "tailwindcss -w -i ./styles/tailwind.css -o app/styles/tailwind.css",
@@ -18,7 +18,9 @@
     "lintfix": "npm run lint -- --fix",
     "format": "prettier --write \"./app/**/*.{ts,tsx}\"",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "e2e:all": "playwright test",
+    "e2e:chromium": "playwright test --project=chromium"
   },
   "dependencies": {
     "@remix-run/cloudflare": "1.5.1",
@@ -30,6 +32,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.10.0",
+    "@playwright-testing-library/test": "^4.2.1",
+    "@playwright/test": "^1.22.2",
     "@remix-run/dev": "1.5.1",
     "@remix-run/eslint-config": "1.5.1",
     "@testing-library/dom": "^8.13.0",

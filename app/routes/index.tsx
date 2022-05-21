@@ -1,8 +1,20 @@
+import { useState } from 'react'
+
 export default function Index() {
+  const [count, setCount] = useState(0)
+
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <h1>Welcome to Remix</h1>
+      <p data-testid="count">{count}</p>
+      <button
+        type="button"
+        onClick={() => setCount((preCount) => preCount + 1)}
+        data-testid="count-up-button"
+      >
+        +
+      </button>
       <ul>
         <li>
           <a
